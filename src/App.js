@@ -7,7 +7,7 @@ import CreateTodo from "./components/create-todo.component";
 import EditTodo from "./components/edit-todo.component";
 import TodosList from "./components/todo-list.component";
 
-//import logo from "./logo.png";
+import logo from "./logo.svg";
 
 
 function App() {
@@ -15,13 +15,17 @@ function App() {
     <Router>
       <div className="container">
 
-        <h1>MERN App</h1>
+        <h2>MERN App</h2>
 
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <a className="navbar-brand" target = "_blank" href="https://fr.reactjs.org/">
+            <img src={logo} width="30" height="30" alt = "ReactJs.com" />
+          </a>
        
           <Link to="/" className="navbar-brand">MERN Stack Todo App</Link>
-          <div className="collapse nav-collapse">
+          <div className="collapse navbar-collapse">
             <ul className="navbar-nav mr-auto">
+
               <li className="navbar-item">
                 <Link to="/" className="nav-link">Todos</Link>
               </li>
@@ -29,9 +33,10 @@ function App() {
               <li className="navbar-item">
                 <Link to="/create" className="nav-link">Create Todo</Link>
               </li>
+
             </ul>
           </div>
-        </nav>
+         </nav>
 
         {/* <Route path="/" exact component={Index} /> */}
 
