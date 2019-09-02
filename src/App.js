@@ -15,23 +15,23 @@ function App() {
     <Router>
       <div className="container">
 
-        <h2>MERN App</h2>
+        
 
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <a className="navbar-brand" target = "_blank" href="https://fr.reactjs.org/">
             <img src={logo} width="30" height="30" alt = "ReactJs.com" />
           </a>
        
-          <Link to="/" className="navbar-brand">MERN Stack Todo App</Link>
+          <Link to="/" className="navbar-brand">MERN Stack App</Link>
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav mr-auto">
 
               <li className="navbar-item">
-                <Link to="/" className="nav-link">Todos</Link>
+                <Link to="/edit/:id" className="nav-link">Listes</Link>
               </li>
           
               <li className="navbar-item">
-                <Link to="/create" className="nav-link">Create Todo</Link>
+                <Link to="/create" className="nav-link">Créer listes</Link>
               </li>
 
             </ul>
@@ -47,8 +47,5 @@ function App() {
     </Router>
   );
 }
-
-
-
 
 export default App;

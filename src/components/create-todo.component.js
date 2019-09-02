@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Axios from 'axios';
 
 
 export default class CreateTodo extends Component{
@@ -45,7 +46,16 @@ export default class CreateTodo extends Component{
         console.log(`Todo Priority : ${this.state.todo_priority}`);
         console.log(`Todo Completed : ${this.state.todo_completed}`);
 
-            
+
+        const newTodo = {
+            todo_description: this.state.todo_description,
+            todo_responsible: this.state.todo_responsible,
+            todo_priority: this.state.todo_priority,
+            todo_completed: this.state.todo_completed
+        }
+          
+        Axios.post('http://localhost:4000/todos/add', newTodo)
+            .then(res => console.log(res.data));
 
         this.setState({
             todo_description : '',
@@ -59,7 +69,7 @@ export default class CreateTodo extends Component{
     render(){
         return (
             <div style ={{marginTop: 20}}>
-                <h3>Create New Todo</h3>
+                <h3>Créer nouveau billet</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Description :</label>
@@ -97,8 +107,6 @@ export default class CreateTodo extends Component{
                         <div className="form-check form-check-inline">
                             
                       {/* medium  */}
-
-
                         <input  type="radio"
                                 name="priorityOptions"
                                 id="priorityMedium"
@@ -112,7 +120,6 @@ export default class CreateTodo extends Component{
                         <div className="form-check form-check-inline">
                             
                       {/* high */}
-
                         <input  type="radio"
                                 name="priorityOptions"
                                 id="priorityHigh"
