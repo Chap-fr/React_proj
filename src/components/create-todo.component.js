@@ -40,7 +40,7 @@ export default class CreateTodo extends Component{
     onSubmit(e){
         e.preventDefault();
 
-        console.log("Form soumis");
+        console.log("Formulaire soumis");
         console.log(`Todo Description : ${this.state.todo_description}`);
         console.log(`Todo Responsible : ${this.state.todo_responsible}`);
         console.log(`Todo Priority : ${this.state.todo_priority}`);

@@ -1,4 +1,16 @@
-import React from 'react';
+import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './home.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+
+export default class CreateTodo extends Component{
+
+    render(){
+        return (
+            <div>
+                <h3>Sith waib</h3>
+            </div>
+        );
+    }
+
+}

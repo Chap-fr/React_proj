@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import CreateTodo from "./components/create-todo.component";
 import EditTodo from "./components/edit-todo.component";
 import TodosList from "./components/todo-list.component";
+import Home from "./home";
+
 
 import logo from "./logo.svg";
 
@@ -22,12 +24,12 @@ function App() {
             <img src={logo} width="30" height="30" alt = "ReactJs.com" />
           </a>
        
-          <Link to="/" className="navbar-brand">MERN Stack App</Link>
+          <Link to="/" className="navbar-brand">MERN App</Link>
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav mr-auto">
 
               <li className="navbar-item">
-                <Link to="/edit/:id" className="nav-link">Listes</Link>
+                <Link to="/listes" className="nav-link">Listes</Link>
               </li>
           
               <li className="navbar-item">
@@ -40,9 +42,11 @@ function App() {
 
         {/* <Route path="/" exact component={Index} /> */}
 
-        <Route path="/" exact component={TodosList} />
+        <Route path="/" exact component={Home} />
+        <Route path="/listes" component={TodosList} />
         <Route path="/edit/:id" component={EditTodo} />
         <Route path="/create" component={CreateTodo} />
+
       </div>
     </Router>
   );
