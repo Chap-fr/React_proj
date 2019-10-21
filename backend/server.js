@@ -14,7 +14,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/todos', {useNewUrlParser: true});
 const connection = mongoose.connection;
 
 connection.once ('open', function(){
-    console.log("La connection à la base MOngoDB a été établi avec succés.");
+    console.log("La connection à la base MongoDB a été établi avec succés.");
 });
 
 todoRoutes.route('/').get(function(req, res){
