@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import '../home.css';
+
 
 
 
@@ -47,12 +47,19 @@ class Form extends Component{
     render(){
         return(
             <form onSubmit={this.handleSubmit}>  
-                <input  type="text" 
-                        placeholder = "Github username"
-                        value = {this.state.userName}
-                        onChange={event => this.setState({ userName: event.target.value})}
-                        />
-                <button>Ajouter</button>
+                <div className="input-group">
+                    <div className="col-xs-3">
+                    <input  type="text" 
+                            placeholder = "Github username"
+                            className="form-control"
+                            value = {this.state.userName}
+                            onChange={event => this.setState({ userName: event.target.value})}
+                            />
+                            </div>
+                            <div class="input-group-append">
+                                <button type="button" className="btn btn-outline-secondary">Ajouter</button>
+                            </div>
+                </div>
             </form>
         )    
     }
@@ -77,8 +84,8 @@ addNewProfile = (profileData) => {
 
     render(){
         return (
-            <div>
-            <div className="title"><h1>Github Application</h1></div>
+            <div><br/>
+            <div className="title"><h1>Github Application</h1><br/></div>
                 <Form onSubmit = {this.addNewProfile} />
                 <CardList profiles={this.state.profiles} />
             </div>

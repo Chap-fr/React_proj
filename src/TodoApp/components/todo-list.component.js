@@ -72,7 +72,7 @@ export default class TodosList extends Component{
 
     render(){
         return (
-            <div>
+            <div style ={{marginTop: 20}}>
                 <h3>Liste</h3>
                 <table className ="table table-striped" style = { {marginTop: 20 }}>
                     <thead>

@@ -1,0 +1,20 @@
+#dropdownMenuButton{
+   
+    margin-right: 5px;
+    color: whitesmoke;
+    border-color: rgb(97, 219, 251);
+    background-color: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#gitButton{
+
+    margin-right: 5px;
+    color: whitesmoke;
+    border-color:rgb(97, 219, 251);
+}
+
+#root{
+
+    background-color:grey;
+}
