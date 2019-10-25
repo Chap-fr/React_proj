@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
-
 const CardList = (props) => (
-
     <div>
         {props.profiles.map(profile => <Card key={profile.id}{...profile}/>)}        
     </div>
@@ -39,10 +34,9 @@ class Form extends Component{
         event.preventDefault();
         const res = await axios.get(`https://api.github.com/users/${this.state.userName}`)
         this.props.onSubmit(res.data)
-        this.state = { userName: ''}
+        this.setState ({ userName: ''})
 
     }
-
 
     render(){
         return(
@@ -50,21 +44,22 @@ class Form extends Component{
                 <div className="input-group">
                     <div className="col-xs-3">
                     <input  type="text" 
-                            placeholder = "Github username"
+                            
                             className="form-control"
                             value = {this.state.userName}
                             onChange={event => this.setState({ userName: event.target.value})}
+                            placeholder = "Github username"
+                            required
                             />
-                            </div>
+                            </div>                        
                             <div class="input-group-append">
-                                <button type="button" className="btn btn-outline-secondary">Ajouter</button>
+                                <button className="btn btn-outline-secondary" id="addBtn">Ajouter</button>
                             </div>
                 </div>
             </form>
         )    
     }
 }
-
 
 export default class Appli extends Component{
 
@@ -77,10 +72,9 @@ constructor(props){
 
 addNewProfile = (profileData) => {
     this.setState(prevState => ({
-        profiles :[...prevState.profiles, profileData]
+        profiles: [...prevState.profiles, profileData]
     }))
 }
-
 
     render(){
         return (
@@ -93,5 +87,3 @@ addNewProfile = (profileData) => {
     }
 
 }
-
-// ReactDOM.render(<Appli title="Github App" />, document.getElementsByName('title'));
